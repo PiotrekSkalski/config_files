@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-DIR=$(dirname "$0")
-ln -s '$DIR/.vimrc' ~/.vimrc
-ln -s '$DIR/.tmux.conf' ~/.tmux.conf
-ln -s '$DIR/.bashrc' ~/.bashrc
+SCRIPT=$(realpath "$BASH_SOURCE[0]")
+DIR=$(dirname "$SCRIPT")
+ln -sf $DIR/.vimrc ~/.vimrc
+ln -sf $DIR/.tmux.conf ~/.tmux.conf
+ln -sf $DIR/.bashrc ~/.bashrc
